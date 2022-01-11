@@ -4,6 +4,45 @@ import java.util.Scanner;
 
 public class StringStudy1 {
 	
+	public void splitTest() {
+		String name="iu suji choa 펭수 춘식이";
+		String [] names = name.split(" ");
+		
+		for(int i=0;i<names.length;i++) {
+			System.out.println(names[i].trim());
+		}
+		
+	}
+	
+	public void valueTest() {
+		int num = 1000;
+		String result = String.valueOf(num);
+		System.out.println(result);
+	}
+	
+	public void caseTest() {
+		String title = " West Side Story ";
+		String result1 = title.toLowerCase();
+		String result2 = title.toUpperCase();
+		
+		System.out.println(title);
+		System.out.println(result1);
+		System.out.println(result2);
+		
+	}
+	
+	public void replaceTest() {
+		String title = "West Side Story";
+		//참조변수명.멤버메서드명()
+		String result = title.replace("West", "North");
+		
+		System.out.println(title);
+		System.out.println(result);
+		
+		
+		
+	}
+	
 	public void subStringEx1() {
 		//키보드로부터 업로드할 파일명을 입력
 		//a.txt, b.pdf, iu.jpg
@@ -74,6 +113,7 @@ public class StringStudy1 {
 	
 	public void indexOfTest() {
 		String msg = "Hello World";
+		//reference, 지역변수, 참조변수
 		//indexOf 호출
 		int num = msg.indexOf("o", 7+1);//int ch = 'W';
 		System.out.println(num);
