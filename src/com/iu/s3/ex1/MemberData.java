@@ -23,6 +23,7 @@ public class MemberData {
 		//data에 있는 문자열을 StringTokenizer로 파싱해서
 		//MemberDTO를 생성해서 멤버변수값으로 대입
 		//MemberDTO들을 ArrayList에 담아서 리턴
+		System.out.println("Main Branch");
 		String str = "id1-pw1-name1-id1@gmail.com-20-";
 		String [] s = str.split("-");
 		
@@ -41,6 +42,7 @@ public class MemberData {
 			memberDTO.setAge(Integer.parseInt(datas[index++]));
 			members[i]=memberDTO;
 			//index++;
+		
 		}
 		
 		return members;
