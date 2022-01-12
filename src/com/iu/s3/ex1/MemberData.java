@@ -24,13 +24,20 @@ public class MemberData {
 		//MemberDTO를 생성해서 멤버변수값으로 대입
 		//MemberDTO들을 ArrayList에 담아서 리턴
 		System.out.println("Main Branch");
-		String str = "id1-pw1-name1-id1@gmail.com-20-";
-		String [] s = str.split("-");
-		
-		StringTokenizer st = new StringTokenizer(str, "-");
+
+		StringTokenizer st = new StringTokenizer(this.data, "-");
 		ArrayList<MemberDTO> ar = new ArrayList<>();
 		
-		return null;
+		while(st.hasMoreTokens()) {
+			MemberDTO memberDTO = new MemberDTO();
+			memberDTO.setId(st.nextToken());    
+			memberDTO.setPw(st.nextToken());    
+			memberDTO.setName(st.nextToken());  
+			memberDTO.setEmail(st.nextToken()); 
+			memberDTO.setAge(Integer.parseInt(st.nextToken().trim());
+			ar.add(memberDTO);
+		
+		return ar;
 	}
 		
 		for(int i=0;i<members.length;i++) {
