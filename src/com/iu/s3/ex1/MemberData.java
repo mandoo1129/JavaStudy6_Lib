@@ -19,6 +19,14 @@ public class MemberData {
 		System.out.println(this.data);
 	}
 	
+	public void addMember(ArrayList<MemberDTO> ar) {
+		//새로 추가할 MemberDTO 생성
+		//키보드로부터 id, pw, name, email, age 입력 받아서 출력
+		//MemberDTO의 멤버변수 값으로 대입
+		//매개변수로 받은 ar에 MemberDTO 추가
+		
+		
+	
 	public ArrayList<MemberDTO> init()	{
 		//data에 있는 문자열을 StringTokenizer로 파싱해서
 		//MemberDTO를 생성해서 멤버변수값으로 대입
@@ -40,19 +48,19 @@ public class MemberData {
 		return ar;
 	}
 		
-		for(int i=0;i<members.length;i++) {
-			MemberDTO memberDTO = new MemberDTO();
-			memberDTO.setId(datas[index++]);    //datas[0] 4  8
-			memberDTO.setPw(datas[index++]);    //datas[1] 5  9
-			memberDTO.setName(datas[index++]);  //datas[2] 6  10
-			memberDTO.setEmail(datas[index++]); //datas[3] 7  11
-			memberDTO.setAge(Integer.parseInt(datas[index++]));
-			members[i]=memberDTO;
-			//index++;
+//		for(int i=0;i<members.length;i++) {
+//			MemberDTO memberDTO = new MemberDTO();
+//			memberDTO.setId(datas[index++]);    //datas[0] 4  8
+//			memberDTO.setPw(datas[index++]);    //datas[1] 5  9
+//			memberDTO.setName(datas[index++]);  //datas[2] 6  10
+//			memberDTO.setEmail(datas[index++]); //datas[3] 7  11
+//			memberDTO.setAge(Integer.parseInt(datas[index++]));
+//			members[i]=memberDTO;
+//			//index++;
 		
 		}
 		
-		return members;
+//		return members;
 	}
 
 }
