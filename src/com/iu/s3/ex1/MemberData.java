@@ -1,6 +1,7 @@
 package com.iu.s3.ex1;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 import com.iu.s2.util.token.SeasonDTO;
@@ -9,9 +10,11 @@ import com.iu.s3.ex1.MemberDTO;
 public class MemberData {
 	
 	private String data;
+	private Scanner sc;
 	
 	//기본 생성자 선언
 	public MemberData() {
+		this.sc = new Scanner(System.in);
 		this.data="id1-pw1-name1-id1@gmail.com-20-";
 		this.data=this.data+"id2 - pw2 - name2 - name2@naver.com-42-";
 		this.data=this.data+"id3 - pw3 - name3 - name3@daum.net-36-";
@@ -19,14 +22,45 @@ public class MemberData {
 		System.out.println(this.data);
 	}
 	
+	public MemberDTO removeMember(ArrayList<MemberDTO> ar) {
+		//삭제하고 싶은 ID 입력 받아서
+		//ArrayList에서 삭제
+
+		MemberDTO memberDTO = null;
+		System.out.println("삭제할 ID 입력");
+		String id = this.sc.next();
+		//int index=-1;
+		
+		for(int i=0;i<ar.size();i++) {
+			if(ar.get(i).getId().equals(id))	{
+				//index=i;
+				break;
+			}
+		
+		memberDTO = ar.remove(i);
+		
+		
+		return memberDTO;
+		
+	}
 	public void addMember(ArrayList<MemberDTO> ar) {
 		//새로 추가할 MemberDTO 생성
 		//키보드로부터 id, pw, name, email, age 입력 받아서 출력
 		//MemberDTO의 멤버변수 값으로 대입
 		//매개변수로 받은 ar에 MemberDTO 추가
+		MemberDTO memberDTO = new MemberDTO();
+		System.out.println("ID 입력");
+		memberDTO.setId(sc.next());
+		System.out.println("PW 입력");
+		memberDTO.setPw(sc.next());
+		System.out.println("Name 입력");
+		memberDTO.setName(sc.next());
+		System.out.println("Email 입력");
+		memberDTO.setEmail(sc.next());
+		System.out.println("Age 입력");
+		memberDTO.setAge(sc.next());
+	}
 		
-		
-	
 	public ArrayList<MemberDTO> init()	{
 		//data에 있는 문자열을 StringTokenizer로 파싱해서
 		//MemberDTO를 생성해서 멤버변수값으로 대입

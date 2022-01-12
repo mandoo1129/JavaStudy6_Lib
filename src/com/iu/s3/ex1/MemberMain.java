@@ -2,7 +2,7 @@ package com.iu.s3.ex1;
 
 import java.util.ArrayList;
 
-import com.iu.s1.string.ex1.MemberData;
+import com.iu.s3.ex1.MemberData;
 
 public class MemberMain {
 
@@ -32,7 +32,13 @@ public class MemberMain {
 		MemberData memberData = new MemberData();
 		ArrayList<MemberDTO> members = memberData.init();
 		
-		memberData.addMember(members);
+		//MemberData.addMember(members);
+		MemberDTO memberDTO = memberData.removeMember(members);
+		if(memberDTO !=null) {
+			System.out.println("삭제 성공");
+		}else {
+			System.out.println("삭제 실패");
+		}
 		
 		for(int i=0;i<members.size();i++) {
 			System.out.println(members.get(i).getId());
