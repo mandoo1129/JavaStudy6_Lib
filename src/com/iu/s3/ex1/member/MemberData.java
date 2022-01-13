@@ -35,6 +35,8 @@ public class MemberData {
 			if(ar.get(i).getId().equals(id))	{
 				//index=i;
 				break;
+				
+
 			}
 		
 		memberDTO = ar.remove(i);
