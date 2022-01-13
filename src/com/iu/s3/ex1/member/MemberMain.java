@@ -1,8 +1,8 @@
-package com.iu.s3.ex1;
+package com.iu.s3.ex1.member;
 
 import java.util.ArrayList;
 
-import com.iu.s3.ex1.MemberData;
+import com.iu.s3.ex1.member.MemberData;
 
 public class MemberMain {
 

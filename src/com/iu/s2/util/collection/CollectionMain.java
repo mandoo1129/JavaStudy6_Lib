@@ -10,7 +10,10 @@ public class CollectionMain {
 //		ListStudy ls = new ListStudy();
 //		List<String> ar = ls.study5();
 		
-		new SetStudy().study2(); //한번 호출하고 끝날 때 사용
+//		new SetStudy().study4(); //한번 호출하고 끝날 때 사용
+		
+		new MapStudy().study1();
+		
 
 	}
 
