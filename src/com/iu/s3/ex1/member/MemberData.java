@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-import com.iu.s2.util.token.SeasonDTO;
-import com.iu.s3.ex1.MemberDTO;
-
 public class MemberData {
 	
 	private String data;
@@ -23,31 +20,28 @@ public class MemberData {
 	}
 	
 	public MemberDTO removeMember(ArrayList<MemberDTO> ar) {
-		//삭제하고 싶은 ID 입력 받아서
-		//ArrayList에서 삭제
-
-		MemberDTO memberDTO = null;
+		//삭제하고 싶은 ID 입력받아서
+		//ArrayList 에서 삭제
+		MemberDTO memberDTO=null;
 		System.out.println("삭제할 ID 입력");
-		String id = this.sc.next();
+		String id=this.sc.next();
 		//int index=-1;
-		
+		System.out.println(id);
 		for(int i=0;i<ar.size();i++) {
-			if(ar.get(i).getId().equals(id))	{
+			System.out.println(ar.get(i).getId());
+			if(ar.get(i).getId().equals(id)) {
 				//index=i;
+				memberDTO = ar.remove(i);
 				break;
-				
-
 			}
-		
-		memberDTO = ar.remove(i);
-		
+		}
 		
 		return memberDTO;
-		
 	}
+	
 	public void addMember(ArrayList<MemberDTO> ar) {
-		//새로 추가할 MemberDTO 생성
-		//키보드로부터 id, pw, name, email, age 입력 받아서 출력
+		//새로추가할 MemberDTO 생성
+		//키보드로 부터 id, pw, name, email, age 입력받아서
 		//MemberDTO의 멤버변수 값으로 대입
 		//매개변수로 받은 ar에 MemberDTO 추가
 		MemberDTO memberDTO = new MemberDTO();
@@ -60,43 +54,42 @@ public class MemberData {
 		System.out.println("Email 입력");
 		memberDTO.setEmail(sc.next());
 		System.out.println("Age 입력");
-		memberDTO.setAge(sc.next());
-	}
+		memberDTO.setAge(sc.nextInt());
+		//id-pw-name-
+		String data ="iu-iu-iu-email-30";
+		MemberDTO mem2 = new MemberDTO();
+		String [] d = data.split("-");
+		mem2.setId(d[0]);
+		mem2.setPw(d[1]);
+		mem2.setName(d[2]);
+		mem2.setEmail(d[3]);
+		mem2.setAge(Integer.parseInt(d[4]));
 		
-	public ArrayList<MemberDTO> init()	{
+		ar.add(mem2);
+		
+	}
+	
+	
+	public ArrayList<MemberDTO> init() {
 		//data에 있는 문자열을 StringTokenizer로 파싱해서
 		//MemberDTO를 생성해서 멤버변수값으로 대입
 		//MemberDTO들을 ArrayList에 담아서 리턴
-		System.out.println("Main Branch");
-
+		System.out.println("MemberEx1 Branch");
+		
 		StringTokenizer st = new StringTokenizer(this.data, "-");
 		ArrayList<MemberDTO> ar = new ArrayList<>();
 		
 		while(st.hasMoreTokens()) {
 			MemberDTO memberDTO = new MemberDTO();
-			memberDTO.setId(st.nextToken());    
-			memberDTO.setPw(st.nextToken());    
-			memberDTO.setName(st.nextToken());  
-			memberDTO.setEmail(st.nextToken()); 
-			memberDTO.setAge(Integer.parseInt(st.nextToken().trim());
+			memberDTO.setId(st.nextToken().trim());
+			memberDTO.setPw(st.nextToken().trim());
+			memberDTO.setName(st.nextToken().trim());
+			memberDTO.setEmail(st.nextToken().trim());
+			memberDTO.setAge(Integer.parseInt(st.nextToken().trim()));
 			ar.add(memberDTO);
-		
-		return ar;
-	}
-		
-//		for(int i=0;i<members.length;i++) {
-//			MemberDTO memberDTO = new MemberDTO();
-//			memberDTO.setId(datas[index++]);    //datas[0] 4  8
-//			memberDTO.setPw(datas[index++]);    //datas[1] 5  9
-//			memberDTO.setName(datas[index++]);  //datas[2] 6  10
-//			memberDTO.setEmail(datas[index++]); //datas[3] 7  11
-//			memberDTO.setAge(Integer.parseInt(datas[index++]));
-//			members[i]=memberDTO;
-//			//index++;
-		
 		}
 		
-//		return members;
+		return ar;
 	}
 
 }

@@ -2,8 +2,6 @@ package com.iu.s3.ex1.member;
 
 import java.util.ArrayList;
 
-import com.iu.s3.ex1.member.MemberData;
-
 public class MemberMain {
 
 	public static void main(String[] args) {
@@ -32,9 +30,9 @@ public class MemberMain {
 		MemberData memberData = new MemberData();
 		ArrayList<MemberDTO> members = memberData.init();
 		
-		//MemberData.addMember(members);
+		//memberData.addMember(members);
 		MemberDTO memberDTO = memberData.removeMember(members);
-		if(memberDTO !=null) {
+		if(memberDTO != null) {
 			System.out.println("삭제 성공");
 		}else {
 			System.out.println("삭제 실패");
@@ -49,7 +47,6 @@ public class MemberMain {
 			System.out.println("================");
 		}
 		
-		System.out.println("name : "+ "iu "+ "age : "+30);
 
 	}
 
