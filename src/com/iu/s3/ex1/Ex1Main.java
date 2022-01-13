@@ -19,7 +19,7 @@ public class Ex1Main {
 		StudentData studentData = new StudentData();
 		
 		//회원들의 정보 모음
-		ArrayList<MemberDTO> ar = memberData.init(); //init는 초기화를 의미
+		ArrayList<MemberDTO> ar = memberData.init(); //init은 초기화를 의미
 		Map<String, StudentDTO> map = studentData.addStudent(ar);
 		Set<String> keys = map.keySet();
 		Iterator<String> k = keys.iterator();
